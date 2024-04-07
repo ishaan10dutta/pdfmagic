@@ -23,7 +23,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 
 import SimpleBar from "simplebar-react";
-// import PdfFullscreen from './PdfFullscreen'
+import PdfFullscreen from "./PdfFullscreen";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -99,7 +99,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
                 "w-12 h-8",
                 errors.page && "focus-visible:ring-red-500"
               )}
-              onKeyDown={(e: { key: string }) => {
+              onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleSubmit(handlePageSubmit)();
                 }
@@ -157,6 +157,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             <RotateCw className="h-4 w-4" />
           </Button>
 
+          <PdfFullscreen fileUrl={url} />
         </div>
       </div>
 
