@@ -1,15 +1,18 @@
 "use client";
 
 import { trpc } from "@/app/_trpc/client";
-import { ChevronLeft, Loader2, XCircle } from "lucide-react";
 import ChatInput from "./ChatInput";
+import Messages from "./Messages";
+import { ChevronLeft, Loader2, XCircle } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
+import { ChatContextProvider } from "./ChatContext";
+// import { PLANS } from "@/config/stripe";
 
-type ChatWrapperProps = {
+interface ChatWrapperProps {
   fileId: string;
   isSubscribed: boolean;
-};
+}
 
 const ChatWrapper = ({ fileId, isSubscribed }: ChatWrapperProps) => {
   const { data, isLoading } = trpc.getFileUploadStatus.useQuery(
@@ -43,6 +46,7 @@ const ChatWrapper = ({ fileId, isSubscribed }: ChatWrapperProps) => {
             </p>
           </div>
         </div>
+
         <ChatInput isDisabled />
       </div>
     );
@@ -76,10 +80,8 @@ const ChatWrapper = ({ fileId, isSubscribed }: ChatWrapperProps) => {
               </span>{" "}
               plan supports up to{" "}
               {/* {isSubscribed
-                ? PLANS.find((p) => p.name === 'Pro')
-                    ?.pagesPerPdf
-                : PLANS.find((p) => p.name === 'Free')
-                    ?.pagesPerPdf}{' '} */}
+                ? PLANS.find((p) => p.name === "Pro")?.pagesPerPdf
+                : PLANS.find((p) => p.name === "Free")?.pagesPerPdf}{" "} */}
               pages per PDF.
             </p>
             <Link
@@ -97,7 +99,18 @@ const ChatWrapper = ({ fileId, isSubscribed }: ChatWrapperProps) => {
         <ChatInput isDisabled />
       </div>
     );
-  return <div>{fileId + isSubscribed}</div>;
+
+  return (
+    <ChatContextProvider fileId={fileId}>
+      <div className="relative min-h-full bg-zinc-50 flex divide-y divide-zinc-200 flex-col justify-between gap-2">
+        <div className="flex-1 justify-between flex flex-col mb-28">
+          <Messages fileId={fileId} />
+        </div>
+
+        <ChatInput />
+      </div>
+    </ChatContextProvider>
+  );
 };
 
 export default ChatWrapper;
