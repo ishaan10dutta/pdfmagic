@@ -1,4 +1,3 @@
-import { cn } from "@/app/lib/utils";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -8,6 +7,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "simplebar-react/dist/simplebar.min.css";
 
 import { Toaster } from "@/components/ui/toaster";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
