@@ -6,5 +6,5 @@ export async function GET(
   { params }: any
 ) {
   const endpoint = params.kindeAuth
-  return handleAuth(request, endpoint)
+  return new Promise(handleAuth(request, endpoint))
 };
