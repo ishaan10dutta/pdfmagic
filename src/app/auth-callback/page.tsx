@@ -39,13 +39,15 @@ const Page = () => {
   }, [isError, error, router]);
 
   return (
-    <div className="w-full mt-24 flex justify-center">
-      <div className="flex flex-col items-center gap-2">
-        <Suspense fallback={<PageLoader />} />
-        <h3 className="font-semibold text-xl">Setting up your account...</h3>
-        <p>You will be redirected automatically.</p>
+    <Suspense>
+      <div className="w-full mt-24 flex justify-center">
+        <div className="flex flex-col items-center gap-2">
+          <PageLoader />
+          <h3 className="font-semibold text-xl">Setting up your account...</h3>
+          <p>You will be redirected automatically.</p>
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 
