@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@kinde-oss/kinde-auth-nextjs": "^1.8.18",
+    "@kinde-oss/kinde-auth-nextjs": "^2.2.3",
     "@langchain/openai": "^0.0.28",
     "@langchain/pinecone": "^0.0.4",
     "@mantine/hooks": "^7.8.0",
