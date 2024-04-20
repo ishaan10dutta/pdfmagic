@@ -7,12 +7,16 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "simplebar-react/dist/simplebar.min.css";
 
 import { Toaster } from "@/components/ui/toaster";
-import { cn } from "@/lib/utils";
+import { cn, constructMetadata } from "@/lib/utils";
+import { Viewport } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = constructMetadata()
+export const metadata = constructMetadata();
 
+export const viewport: Viewport = {
+  themeColor: "#FFF",
+};
 export default function RootLayout({
   children,
 }: {
