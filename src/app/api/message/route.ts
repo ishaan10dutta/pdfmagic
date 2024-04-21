@@ -41,7 +41,7 @@ export const POST = async (req: NextRequest) => {
     },
   });
 
-  // 1: vectorize message
+  //vectorize message
   const embeddings = new OpenAIEmbeddings({
     openAIApiKey: process.env.OPENAI_API_KEY,
   });

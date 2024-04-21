@@ -14,11 +14,11 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 
-interface UserAccountNavProps {
+type UserAccountNavProps = {
   email: string | undefined;
   name: string;
   imageUrl: string;
-}
+};
 
 const UserAccountNav = async ({
   email,

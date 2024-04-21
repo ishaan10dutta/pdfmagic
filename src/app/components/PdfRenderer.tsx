@@ -35,9 +35,9 @@ import { Input } from "@/components/ui/input";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-interface PdfRendererProps {
+type PdfRendererProps = {
   url: string;
-}
+};
 
 const PdfRenderer = ({ url }: PdfRendererProps) => {
   const { toast } = useToast();

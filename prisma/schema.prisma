@@ -14,7 +14,7 @@ datasource db {
 }
 
 model User {
-  id      String    @id @unique //matches kinde user id
+  id      String    @id @unique 
   email   String    @unique
   File    File[]
   Message Message[]

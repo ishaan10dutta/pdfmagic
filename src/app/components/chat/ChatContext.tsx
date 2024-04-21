@@ -53,13 +53,10 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
       backupMessage.current = message;
       setMessage("");
 
-      // step 1
       await utils.getFileMessages.cancel();
 
-      // step 2
       const previousMessages = utils.getFileMessages.getInfiniteData();
 
-      // step 3
       utils.getFileMessages.setInfiniteData(
         { fileId, limit: INFINITE_QUERY_LIMIT },
         (old) => {
@@ -126,7 +123,7 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
 
         accResponse += chunkValue;
 
-        // append chunk to the actual message
+        //append chunk to the actual message
         utils.getFileMessages.setInfiniteData(
           { fileId, limit: INFINITE_QUERY_LIMIT },
           (old) => {

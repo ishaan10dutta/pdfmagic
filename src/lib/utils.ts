@@ -13,8 +13,8 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "Quill - the SaaS for students",
-  description = "Quill is an open-source software to make chatting to your PDF files easy.",
+  title = "PdfQuiz - get to know your PDF better",
+  description = "PdfQuiz is an open-source SaaS application to make chatting to your PDF files easy.",
   image = "/thumbnail.png",
   icons = "/favicon.ico?v=2",
   noIndex = false,
@@ -45,7 +45,7 @@ export function constructMetadata({
       creator: "@IshaanDutta20",
     },
     icons,
-    metadataBase: new URL("https://ishaan-quill.vercel.app/"),
+    metadataBase: new URL("https://ishaandutta-pdfquiz.vercel.app/"),
     ...(noIndex && {
       robots: {
         index: false,
