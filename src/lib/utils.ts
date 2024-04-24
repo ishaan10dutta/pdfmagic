@@ -13,8 +13,8 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "PdfQuiz - get to know your PDF better",
-  description = "PdfQuiz is an open-source SaaS application to make chatting to your PDF files easy.",
+  title = "PdfMagic - get to know your document better",
+  description = "PdfMagic is an open-source SaaS application to make chatting to your PDF files easy.",
   image = "/thumbnail.png",
   icons = "/favicon.ico?v=2",
   noIndex = false,
@@ -45,7 +45,7 @@ export function constructMetadata({
       creator: "@IshaanDutta20",
     },
     icons,
-    metadataBase: new URL("https://ishaandutta-pdfquiz.vercel.app/"),
+    metadataBase: new URL("https://ishaandutta-pdfmagic.vercel.app/"),
     ...(noIndex && {
       robots: {
         index: false,
