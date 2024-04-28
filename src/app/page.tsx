@@ -23,15 +23,15 @@ export default function Home() {
           upload your file and start asking questions right away.
         </p>
 
-        <RegisterLink
+        <Link
           className={buttonVariants({
             size: "lg",
             className: "mt-5",
           })}
           href="/dashboard"
-          target="_self">
+          target="_blank">
           Get started <ArrowRight className="ml-2 h-5 w-5" />
-        </RegisterLink>
+        </Link>
       </MaxWidthWrapper>
 
       {/* value proposition section */}
