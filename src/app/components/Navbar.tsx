@@ -45,7 +45,9 @@ const Navbar = async () => {
                 <RegisterLink
                   className={buttonVariants({
                     size: "sm",
-                  })}>
+                  })}
+                  target="_self"
+                  >
                   Get started <ArrowRight className="ml-1.5 h-5 w-5" />
                 </RegisterLink>
               </>

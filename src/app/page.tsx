@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/app/components/ui/button";
 import Image from "next/image";
+import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Home() {
   return (
@@ -22,15 +23,15 @@ export default function Home() {
           upload your file and start asking questions right away.
         </p>
 
-        <Link
+        <RegisterLink
           className={buttonVariants({
             size: "lg",
             className: "mt-5",
           })}
           href="/dashboard"
-          target="_blank">
+          target="_self">
           Get started <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        </RegisterLink>
       </MaxWidthWrapper>
 
       {/* value proposition section */}
