@@ -9,6 +9,8 @@ import {
 import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
+import { SOURCE_CODE } from "@/config/links";
+import Image from "next/image";
 
 const Navbar = async () => {
   const { getUser } = getKindeServerSession();
@@ -46,8 +48,7 @@ const Navbar = async () => {
                   className={buttonVariants({
                     size: "sm",
                   })}
-                  target="_blank"
-                  >
+                  target="_blank">
                   Get started <ArrowRight className="ml-1.5 h-5 w-5" />
                 </RegisterLink>
               </>
@@ -74,6 +75,9 @@ const Navbar = async () => {
               </>
             )}
           </div>
+          <Link href={SOURCE_CODE} target="_blank" rel="noreferrer noopener">
+            <Image src="/github.svg" alt="GitHub" height={25} width={25} />
+          </Link>
         </div>
       </MaxWidthWrapper>
     </nav>
